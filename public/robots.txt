@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://www.tech4universe.com
+
+# Sitemaps
+Sitemap: https://www.tech4universe.com/sitemap.xml
