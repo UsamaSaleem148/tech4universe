@@ -242,7 +242,7 @@ const projects = [
     title: 'Email Campaign',
     type: 'excel',
     description: 'Email marketing campaign dashboard showing performance metrics, open rates, click rates, and reply statistics across multiple campaigns.',
-    techStack: 'Excel, Google SpreadSheet',
+    techStack: 'EMAIL MARKETING, OUTREACH STRATEGY, CRM MANAGEMENT, DIGITALMARKETING',
     image: '/assets/Email Campaign.png',
     link: 'https://www.google.com',
   },
@@ -250,7 +250,7 @@ const projects = [
     title: 'Market Research, List Building',
     type: 'excel',
     description: 'Comprehensive market research and list building spreadsheet showing detailed business data including venue accounts, contact information, locations, and booking software details for targeted outreach.',
-    techStack: 'Excel, Google SpreadSheet',
+    techStack: 'Excel, Google SpreadSheet, DECISION MAKER LEAD GENERATION, LIST BUILDING, TAM',
     image: '/assets/Market Research, List Building.png',
     link: 'https://www.google.com',
   },
@@ -258,7 +258,7 @@ const projects = [
     title: 'Lead Generation',
     type: 'excel',
     description: 'Comprehensive lead generation database with business directory information including web URLs, addresses, postal codes, owner names, email addresses, and phone numbers for targeted B2B outreach.',
-    techStack: 'Excel, Google SpreadSheet',
+    techStack: 'B2B LEAD GENERATION, HYPER TARGETED LEAD GENERATION, TARGETED LEAD RESEARCH',
     image: '/assets/LEAD GENERATION (2).png',
     link: 'https://www.google.com',
   },
@@ -266,7 +266,7 @@ const projects = [
     title: 'List Building, Cold Calling, Appointment Setting',
     type: 'excel',
     description: 'Property data management spreadsheet with comprehensive property addresses, owner information, contact details, and phone numbers for targeted cold calling and appointment setting campaigns.',
-    techStack: 'Excel, Google SpreadSheet',
+    techStack: 'APPOINTMENT SETTING, COLDCALLING, SALES PIPELINE AND FUNNEL BUILDING, CLIENT ACQUISITION, VA, TELEMARKETING',
     image: '/assets/LIST BUILDING, COLD CALLING, APPOINTMENT SETTING.png',
     link: 'https://www.google.com',
   },
@@ -276,18 +276,20 @@ export default function ProjectSection() {
   // const [isModalOpen, setIsModalOpen] = useState(false)
   const [selectedProject, setSelectedProject] = useState<(typeof projects)[0] | null>(null)
   const [isModalOpen, setIsModalOpen] = useState(false)
+  const [isContactModalOpen, setIsContactModalOpen] = useState(false)
 
   const handleProjectClick = (project: (typeof projects)[0]) => {
     if (project.type === 'image') {
       setSelectedProject(project)
       setIsModalOpen(true)
     } else if (project.type === 'excel' && project.link) {
-      window.open(project.link, '_blank')
+      setIsContactModalOpen(true)
     }
   }
 
   const handleCloseModal = () => {
     setIsModalOpen(false)
+    setIsContactModalOpen(false)
     setSelectedProject(null)
   }
 
@@ -437,7 +439,7 @@ export default function ProjectSection() {
           </a>
         </motion.div>
       </div>
-      <ContactModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
+      <ContactModal isOpen={isContactModalOpen} onClose={() => setIsContactModalOpen(false)} />
     </section>
   )
 }
