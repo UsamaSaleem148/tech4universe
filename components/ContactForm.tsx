@@ -63,7 +63,7 @@ export default function ContactForm() {
           Thanks for reaching out!
         </h3>
         <p className="text-muted-foreground">
-          WE&apos;ll get back to you shortly.
+          We&apos;ll get back to you shortly.
         </p>
       </motion.div>
     );
