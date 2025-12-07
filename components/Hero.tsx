@@ -1,5 +1,6 @@
 'use client'
 
+import { calendlyLink } from '@/lib/utils'
 import { motion } from 'framer-motion'
 import { Code, Heart, Calendar, Star } from 'lucide-react'
 
@@ -20,17 +21,18 @@ export default function Hero() {
         <div className='absolute w-[200%] h-[200%] top-[-50%] left-[-50%] bg-[repeating-linear-gradient(45deg,var(--primary) 0 2px,transparent 2px 10px)] opacity-10' />
       </div>
 
-      <div id="home" className='mx-auto max-w-5xl text-center px-6 relative z-10'>
+      <div id='home' className='mx-auto max-w-5xl text-center px-6 relative z-10'>
         <motion.h1 initial={{ opacity: 0, y: 40 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }} className='text-5xl md:text-6xl font-bold tracking-tight text-red-600 dark:text-red-500'>
           Where Imagination Meets Innovation
         </motion.h1>
 
         <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.2, duration: 0.8 }} className='mt-6 text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed'>
-          Tech4 Universe LLC transforms ideas into powerful digital solutions — from Lead Generation and Software Development to Cybersecurity and AI Automation. We combine creativity, technology, and strategy to help businesses grow faster, stay secure, and deliver exceptional results. Whether it&apos;s driving B2B leads, developing next-generation applications, or securing digital infrastructure — we make innovation simple.
+          Tech4 Universe LLC transforms ideas into powerful digital solutions — from Lead Generation and Software Development to Cybersecurity and AI Automation. We combine creativity, technology, and strategy to help businesses grow faster, stay
+          secure, and deliver exceptional results. Whether it&apos;s driving B2B leads, developing next-generation applications, or securing digital infrastructure — we make innovation simple.
         </motion.p>
 
         <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.4, duration: 0.8 }} className='mt-10 flex flex-col sm:flex-row justify-center gap-4'>
-          <a href='#contact' className='px-8 py-4 rounded-lg bg-black text-white dark:bg-white dark:text-black text-lg font-medium transition transform hover:shadow-lg hover:scale-105 hover:bg-gray-800 dark:hover:bg-gray-100'>
+          <a href={calendlyLink} target='_blank' className='px-8 py-4 rounded-lg bg-black text-white dark:bg-white dark:text-black text-lg font-medium transition transform hover:shadow-lg hover:scale-105 hover:bg-gray-800 dark:hover:bg-gray-100'>
             Get a Free Consultation
           </a>
           <a href='#services' className='px-8 py-4 rounded-lg border border-foreground text-lg font-medium text-foreground transition transform hover:bg-foreground hover:text-background hover:scale-105'>
